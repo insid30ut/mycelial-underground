@@ -35,6 +35,20 @@ export default {
       validation: Rule => Rule.max(200)
     },
     {
+      name: 'category',
+      title: 'Category',
+      type: 'string',
+      options: {
+        list: [
+          {title: 'Growing Techniques', value: 'growing'},
+          {title: 'Sterilization', value: 'sterilization'},
+          {title: 'Substrate Preparation', value: 'substrate'},
+          {title: 'Harvesting', value: 'harvesting'},
+          {title: 'General Tips', value: 'general'}
+        ]
+      }
+    },
+    {
       name: 'difficulty_level',
       title: 'Difficulty Level',
       type: 'string',
@@ -62,14 +76,16 @@ export default {
   preview: {
     select: {
       title: 'title',
+      category: 'category',
       difficulty: 'difficulty_level',
       media: 'image'
     },
     prepare(selection) {
-      const {title, difficulty, media} = selection
+      const {title, category, difficulty, media} = selection
+      const subtitle = [category, difficulty].filter(Boolean).join(' • ')
       return {
         title: title,
-        subtitle: difficulty ? `Difficulty: ${difficulty}` : '',
+        subtitle: subtitle || '',
         media: media
       }
     }

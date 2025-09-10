@@ -45,20 +45,6 @@ export default {
       title: 'Published At',
       type: 'datetime',
       initialValue: () => new Date().toISOString()
-    },
-    {
-      name: 'category',
-      title: 'Category',
-      type: 'string',
-      options: {
-        list: [
-          {title: 'Growing Techniques', value: 'growing'},
-          {title: 'Sterilization', value: 'sterilization'},
-          {title: 'Substrate Preparation', value: 'substrate'},
-          {title: 'Harvesting', value: 'harvesting'},
-          {title: 'General Tips', value: 'general'}
-        ]
-      }
     }
   ],
   preview: {
