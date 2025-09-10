@@ -7,7 +7,7 @@ export default {
       name: 'title',
       title: 'Title',
       type: 'string',
-      validation: Rule => Rule.required()
+      validation: (/** @type {any} */ Rule) => Rule.required()
     },
     {
       name: 'slug',
@@ -17,7 +17,7 @@ export default {
         source: 'title',
         maxLength: 96,
       },
-      validation: Rule => Rule.required()
+      validation: (/** @type {any} */ Rule) => Rule.required()
     },
     {
       name: 'image',
@@ -32,7 +32,7 @@ export default {
       title: 'Brief Description',
       type: 'text',
       rows: 3,
-      validation: Rule => Rule.max(200)
+      validation: (/** @type {any} */ Rule) => Rule.max(200)
     },
     {
       name: 'category',
@@ -80,7 +80,7 @@ export default {
       difficulty: 'difficulty_level',
       media: 'image'
     },
-    prepare(selection) {
+    prepare(/** @type {any} */ selection) {
       const {title, category, difficulty, media} = selection
       const subtitle = [category, difficulty].filter(Boolean).join(' • ')
       return {
