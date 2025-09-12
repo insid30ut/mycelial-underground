@@ -3,7 +3,8 @@ import {defineCliConfig} from 'sanity/cli'
 export default defineCliConfig({
   api: {
     projectId: 'y0l7x6o2',
-    dataset: 'production'
+    dataset: 'production',
+    studioHost: 'mycelial-underground'
   },
   /**
    * Enable auto-updates for studios.
